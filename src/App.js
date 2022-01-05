@@ -6,10 +6,9 @@ function App() {
   return (
     <>
       <Navbar title="MyTxtApp" />
-      <div className="container my-3">
-
-      <TxtForm heading="Please Enter your text" />
-      </div>
+      
+        <TxtForm heading="Magical Box"/>
+      
     </>
   );
 }
