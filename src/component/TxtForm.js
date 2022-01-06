@@ -6,15 +6,21 @@ export default function TxtForm(props) {
   const txtToUpCase = () => {
     let newTxt = txt.toUpperCase();
     setTxt(newTxt);
+    props.showAlert('Capitalized', 'success')
   };
+
   const txtToLowerCase = () => {
     let newTxt = txt.toLowerCase();
     setTxt(newTxt);
+    props.showAlert('Changed to Lower Case', 'success')
   };
+
   const clearTxt = () => {
     let newTxt = " ";
     setTxt(newTxt);
+    props.showAlert('Text Cleared', 'success')
   };
+
   const revTxt = () => {
     // let arr = [];
     // let spTxt = txt.split(" ");
@@ -25,6 +31,7 @@ export default function TxtForm(props) {
     // setTxt(rev);
     let newText=txt.split(" ").reverse( ).join(" ");
     setTxt(newText);
+    props.showAlert('Text Reveresed', 'success')
   };
   
    
@@ -51,16 +58,16 @@ export default function TxtForm(props) {
         <button className="btn btn-info mx-1" onClick={txtToUpCase}>
           Change to UpperCase
         </button>
-        <button className="btn btn-danger mx-1" onClick={clearTxt}>
+        <button className="btn btn-info mx-1" onClick={clearTxt}>
           Clear Text
         </button>
         <button className="btn btn-info mx-1" onClick={revTxt}>
           Reverse Text
         </button>
-        <button className="btn btn-success mx-1" onClick={txtToLowerCase}>
+        <button className="btn btn-info mx-1" onClick={txtToLowerCase}>
           Change to LowerCase
         </button>
-        <button className="btn btn-success mx-1">
+        <button className="btn btn-info mx-1">
           Remove Duplicate words
         </button>
       </div>
