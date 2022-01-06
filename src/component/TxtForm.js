@@ -32,7 +32,7 @@ export default function TxtForm(props) {
 
   return (
     <>
-      <div className="container my-3">
+      <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
         <h3>{props.heading}</h3>
         <div className="mb-3">
           <textarea
@@ -40,7 +40,12 @@ export default function TxtForm(props) {
             id="textbox"
             rows="8"
             value={txt}
+            placeholder="Type something"
             onChange={handleChange}
+            style={{
+              backgroundColor: props.mode==='dark'?'grey':'white', 
+              color: props.mode==='dark'?
+              'white':'#042743', }}
           ></textarea>
         </div>
         <button className="btn btn-info mx-1" onClick={txtToUpCase}>
@@ -59,12 +64,22 @@ export default function TxtForm(props) {
           Remove Duplicate words
         </button>
       </div>
-      <div className="container my-3">
-        <h3>Your Text Summary</h3>
+      <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
+        <h3 class="badge bg-secondary p-3 fs-3">Your Text Summary</h3>
         <p>word counter: {txt.split(" ").length} </p>
         <p> charcter counter: {txt.length} </p>
-        <h4>Preview Text</h4>
-        <p>{txt}</p>
+        <h4 class="badge bg-secondary p-3 fs-3 fst-normal">Preview Text</h4>
+        <p
+           style = {{
+            color:
+            txt.length===0
+            ? 'grey'
+            : `${props.mode === "dark" ? "white" : "black"}`,
+          }}  
+            >
+              {txt.length>0?txt:"Enter in txtbox to preview:"}
+          
+          </p>
         <h4>Approx time taken</h4>
         <p>{0.008 * txt.split(" ").length} min</p>
       </div>
