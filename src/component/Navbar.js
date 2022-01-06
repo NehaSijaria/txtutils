@@ -5,7 +5,7 @@ const Navbar = (props) => {
   // const myprops = {title, list}
   return (
     
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {props.title}
