@@ -26,7 +26,8 @@ export default function TxtForm(props) {
     let newText=txt.split(" ").reverse( ).join(" ");
     setTxt(newText);
   };
-
+  
+   
   const handleChange = (e) => setTxt(e.target.value);
 
   return (
@@ -53,6 +54,9 @@ export default function TxtForm(props) {
         </button>
         <button className="btn btn-success mx-1" onClick={txtToLowerCase}>
           Change to LowerCase
+        </button>
+        <button className="btn btn-success mx-1">
+          Remove Duplicate words
         </button>
       </div>
       <div className="container my-3">
