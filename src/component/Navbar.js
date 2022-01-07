@@ -60,9 +60,21 @@ const Navbar = (props) => {
             style={{height:'30px', width:'30px', cursor: 'pointer'}} 
             >
             </div>
+            {/* for light theme */}
+            <div className="bg-light rounded mx-2"
+            onClick={()=>{props.toggleMode('light')}}
+            style={{height:'30px', width:'30px', cursor: 'pointer', border:'0.5px solid black'}} 
+            >
+            </div>
+            {/* for dark theme */}
+            <div className="bg-dark rounded mx-2"
+            onClick={()=>{props.toggleMode('dark')}}
+            style={{height:'30px', width:'30px', cursor: 'pointer', border:'0.5px solid white' }} 
+            >
+            </div>
           </div>
 
-          <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+          {/* <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
             <input
               className="form-check-input"
               type="checkbox"
@@ -75,7 +87,7 @@ const Navbar = (props) => {
               Enable dark mode
             </label>
           </div>
-          
+           */}
         </div>
       </div>
     </nav>
